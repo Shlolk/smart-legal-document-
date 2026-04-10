@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Citizen Digital Rights Guardian</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="card">
+        <header class="hero">
+          <h1>Citizen Digital Rights Guardian</h1>
+          <p>Describe a government or legal problem in plain language and receive simplified guidance, relevant rights, and civic actions.</p>
+        </header>
+
+        <section class="example-box">
+          <h2>Try a sample problem</h2>
+          <ul>
+            <li>Police took my phone without a warrant</li>
+            <li>My employer has not paid my salary for two months</li>
+            <li>The landlord is trying to evict me without notice</li>
+          </ul>
+        </section>
+
+        <form id="problem-form">
+          <label for="problem">Your legal or government-related problem</label>
+          <textarea
+            id="problem"
+            name="problem"
+            rows="5"
+            placeholder="e.g., Company didn't pay my salary on time"
+            required
+          ></textarea>
+          <button type="submit" id="submit-button">Request Guidance</button>
+        </form>
+
+        <section id="result" class="result hidden" aria-live="polite"></section>
+      </main>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
