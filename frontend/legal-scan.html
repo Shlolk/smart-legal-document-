@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scan Your Legal Document</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .highlight-term { background: rgba(255, 214, 10, 0.25); border-radius: 0.35rem; padding: 0.1rem 0.25rem; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body">
+  <nav class="bg-white/95 border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="font-bold text-xl text-slate-900">CitizenRights.gov.in</div>
+      <div class="flex flex-wrap items-center gap-3 text-slate-600 text-sm">
+        <a class="hover:text-blue-700" href="index.html">Home</a>
+        <a class="hover:text-blue-700" href="#scan-section">Scan Document</a>
+        <a class="hover:text-blue-700" href="#results-section">Results</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <header class="text-center mb-12">
+      <p class="text-sm uppercase tracking-[0.3em] text-secondary font-semibold">AI Legal Document Scan</p>
+      <h1 class="mt-4 text-4xl md:text-5xl font-extrabold text-slate-900">Scan Your Legal Document</h1>
+      <p class="mt-4 text-slate-600 max-w-2xl mx-auto text-base md:text-lg">
+        Upload or capture an image of a government document or legal notice, then scan it for extracted text and simplified legal explanations.
+      </p>
+    </header>
+
+    <section id="scan-section" class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.95fr] gap-8">
+      <div class="space-y-6 bg-white shadow-lg rounded-[2rem] p-8">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-sm uppercase tracking-[0.3em] text-secondary font-semibold">Upload or Capture</p>
+            <h2 class="mt-2 text-2xl font-bold text-slate-900">Document Image</h2>
+          </div>
+          <span class="material-symbols-outlined text-4xl text-secondary">photo_camera</span>
+        </div>
+
+        <div class="space-y-4">
+          <label class="block text-sm font-semibold text-slate-700">Upload document image</label>
+          <input id="file-input" type="file" accept="image/*" class="w-full rounded-[1rem] border border-slate-300 bg-slate-50 px-4 py-3 text-slate-800" />
+        </div>
+
+        <div class="space-y-4">
+          <label class="block text-sm font-semibold text-slate-700">Camera capture</label>
+          <div class="grid gap-3">
+            <button id="toggle-camera-button" type="button" class="inline-flex items-center justify-center gap-2 rounded-[1rem] bg-blue-600 text-white px-5 py-3 font-semibold shadow-sm hover:bg-blue-700 transition">Use Camera</button>
+            <div id="camera-panel" class="hidden rounded-[1.5rem] overflow-hidden border border-slate-200 bg-slate-950/5">
+              <video id="camera-video" autoplay playsinline class="w-full h-64 object-cover bg-slate-100"></video>
+              <button id="capture-button" type="button" class="w-full px-5 py-3 bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">Capture Snapshot</button>
+            </div>
+            <img id="preview-image" src="" alt="Selected document preview" class="hidden w-full rounded-[1.5rem] border border-slate-200 object-cover" />
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <button id="scan-button" type="button" class="w-full rounded-[1.5rem] bg-orange-500 text-white px-6 py-4 font-bold text-lg hover:bg-orange-600 transition shadow-lg transform hover:scale-105">Scan Document</button>
+          <p id="scan-status" class="text-sm text-slate-600 font-medium"></p>
+        </div>
+      </div>
+
+      <div id="results-section" class="space-y-6">
+        <div class="bg-white shadow-lg rounded-[2rem] p-8">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <div>
+              <p class="text-sm uppercase tracking-[0.3em] text-secondary font-semibold">Extracted Text</p>
+              <h2 class="mt-2 text-2xl font-bold text-slate-900">Document Analysis</h2>
+            </div>
+            <button id="listen-button" type="button" class="inline-flex items-center gap-2 rounded-[1rem] border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50 transition">
+              <span class="material-symbols-outlined">volume_up</span>
+              Listen Explanation
+            </button>
+          </div>
+          <div id="extracted-text" class="min-h-[280px] rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 text-slate-700 leading-7 whitespace-pre-wrap"></div>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-[2rem] p-8">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <div>
+              <p class="text-sm uppercase tracking-[0.3em] text-secondary font-semibold">Legal Terms</p>
+              <h2 class="mt-2 text-2xl font-bold text-slate-900">Detected Complex Terms</h2>
+            </div>
+            <span class="material-symbols-outlined text-4xl text-secondary">gavel</span>
+          </div>
+          <div id="terms-list" class="space-y-4"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="legal-scan.js"></script>
+</body>
+</html>

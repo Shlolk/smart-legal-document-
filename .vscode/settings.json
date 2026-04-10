@@ -2,5 +2,6 @@
   "python.defaultInterpreterPath": "C:/Python314/python.exe",
   "python.analysis.extraPaths": [
     "./backend"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }

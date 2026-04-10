@@ -1,44 +1,444 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Citizen Digital Rights Guardian</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <main class="card">
-        <header class="hero">
-          <h1>Citizen Digital Rights Guardian</h1>
-          <p>Describe a government or legal problem in plain language and receive simplified guidance, relevant rights, and civic actions.</p>
-        </header>
+<!DOCTYPE html>
 
-        <section class="example-box">
-          <h2>Try a sample problem</h2>
-          <ul>
-            <li>Police took my phone without a warrant</li>
-            <li>My employer has not paid my salary for two months</li>
-            <li>The landlord is trying to evict me without notice</li>
-          </ul>
-        </section>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Citizen Digital Rights Guardian – AI Constitution Engine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#2b4772",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#683700",
+                      "on-secondary-fixed": "#2e1500",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1a1c20",
+                      "primary-container": "#0c2d57",
+                      "inverse-primary": "#acc7fa",
+                      "secondary-fixed": "#ffdcc2",
+                      "primary": "#001838",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#7a95c6",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e2e2e8",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d9d9df",
+                      "secondary": "#8f4e00",
+                      "surface-container-high": "#e7e8ee",
+                      "surface-container-low": "#f3f3f9",
+                      "surface-bright": "#f9f9ff",
+                      "on-secondary-fixed-variant": "#6d3a00",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#acc7fa",
+                      "on-surface-variant": "#43474f",
+                      "on-primary-fixed": "#001b3d",
+                      "tertiary-fixed": "#8dfc75",
+                      "tertiary": "#011e00",
+                      "surface-container-highest": "#e2e2e8",
+                      "tertiary-fixed-dim": "#72de5c",
+                      "on-tertiary-fixed-variant": "#035300",
+                      "secondary-fixed-dim": "#ffb77a",
+                      "outline-variant": "#c4c6d0",
+                      "outline": "#747780",
+                      "surface-tint": "#445f8c",
+                      "surface-container": "#ededf3",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#3eaa2e",
+                      "primary-fixed": "#d6e3ff",
+                      "inverse-on-surface": "#f0f0f6",
+                      "on-background": "#1a1c20",
+                      "surface": "#f9f9ff",
+                      "tertiary-container": "#013600",
+                      "secondary-container": "#fe9832",
+                      "on-tertiary-fixed": "#012200",
+                      "background": "#f9f9ff",
+                      "inverse-surface": "#2e3035"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(12, 45, 87, 0.92), rgba(0, 24, 56, 0.98));
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-[100] bg-white/80 backdrop-blur-xl shadow-[0px_20px_40px_rgba(0,27,61,0.06)]">
+<div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-blue-900 uppercase">
+                CitizenRights.gov.in
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-blue-900 border-b-2 border-orange-500 font-semibold pb-1" href="#">Home</a>
+<a class="text-slate-600 font-medium hover:text-blue-800 transition-colors" href="#">Know Your Rights</a>
+<a class="text-slate-600 font-medium hover:text-blue-800 transition-colors" href="#">Legal Guidance</a>
+<a class="text-slate-600 font-medium hover:text-blue-800 transition-colors" href="voice-assistant.html">Legal Procedures</a>
+<a class="text-slate-600 font-medium hover:text-blue-800 transition-colors" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-blue-50 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-blue-900" data-icon="accessibility">accessibility</span>
+</button>
+<button class="p-2 hover:bg-blue-50 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-blue-900" data-icon="calendar">calendar_today</span>
+</button>
+<button class="p-2 hover:bg-blue-50 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-blue-900" data-icon="language">language</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+<!-- Hero Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Indian Landmark Architecture" class="w-full h-full object-cover" data-alt="Majestic wide angle view of the Taj Mahal at sunrise with soft golden light reflecting on the marble and mist over the water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC72YYFkSabguZXjT3NaFOxzQtNW-nL6Gi4efM4eSgLeBaJ3i0dVSjL47AWJLcLnQhm01L9VPEf_HXvrL0ov8_5m0vZXHobQQ1zn46sT96NvHFztYbIgSvWo-jGHG47z3apwJNVuTRwCSB8ZAhGnkOW3MsYi2P7SQJ2qvmkXCYRKiqr_jZAHWSDwDZoqPh6j_pjX4C_92bsi4ZrR9-jhtjjXnF9Wo_5-4NE5SlXqm1RHP-QubtOjRgdqDQrUS4uuRk7DHgBtLecGwI"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<!-- Content Canvas -->
+<div class="relative z-10 w-full max-w-5xl px-6 py-20 text-center flex flex-col items-center">
+<!-- Emblem Anchor -->
+<div class="mb-8 rounded-full bg-white/10 backdrop-blur-md inline-flex items-center justify-center p-2">
+<img alt="National Emblem" class="h-20 w-auto" data-alt="The State Emblem of India, featuring four lions standing back to back, symbolizing power, courage, confidence, and pride." src="https://lh3.googleusercontent.com/aida/ADBb0uhxZBxICdSxHfXaoAYwEMMuAj3xgI16yqEIVD4fRkBh-7bZigAQOMe0o2gkL9RQzXBQIQXeLLnfk7a16Npz06gOlKv0FkMwOXCLAQH9t4krUXpZjDc3vdE3TNvCoL4cAvS9bz-OBkkv7vw1HkxoCr5k1RCwN0wbk9ln1X6X6QHn0qf6dDCLnQ0JnOnlIACvXpj9Yz1b7XRHZicrzbYDwRTr-edbd7J3cZhMvtkYBawU0MdVqurjvLTFGCxIU2sta4MrpERIiGItvQ"/>
+</div>
+<h1 class="text-4xl md:text-7xl font-extrabold tracking-tighter text-white mb-4 leading-tight">
+                Citizen Digital Rights Guardian
+            </h1>
+<p class="text-xl md:text-2xl text-on-primary-container font-medium mb-12 max-w-2xl mx-auto">
+                AI Constitution Engine – Empowering Citizens with Instant, Reliable Legal Knowledge
+            </p>
+<!-- AI Engine Area -->
+<div class="w-full max-w-4xl glass-panel p-2 md:p-4 rounded-[1.5rem] shadow-2xl">
+<form id="problem-form" class="flex flex-col md:flex-row gap-2">
+<div class="flex-grow flex items-center bg-white rounded-[1rem] px-6 py-2 shadow-inner relative">
+<span class="material-symbols-outlined text-slate-400 mr-4" data-icon="gavel">gavel</span>
+<input id="problem" class="w-full border-none focus:ring-0 text-primary py-4 text-lg bg-transparent placeholder:text-slate-400 font-medium" placeholder="Describe your legal problem (Example: police took my phone without warrant)" type="text" required/>
+<button id="voice-button" type="button" class="ml-4 p-2 hover:bg-slate-100 rounded-lg transition-all" title="Click to speak">
+<span class="material-symbols-outlined text-slate-400 text-2xl" data-icon="mic">mic</span>
+</button>
+</div>
+<select id="voice-language" class="bg-white/90 border-none rounded-[1rem] px-6 py-4 md:w-64 font-semibold text-primary focus:ring-2 focus:ring-secondary cursor-pointer">
+<option value="en-US">English (voice)</option>
+<option value="hi-IN">Hindi (voice)</option>
+<option value="bn-IN">Bengali (voice)</option>
+<option value="ta-IN">Tamil (voice)</option>
+<option value="mr-IN">Marathi (voice)</option>
+<option value="es-ES">Spanish (voice)</option>
+<option value="fr-FR">French (voice)</option>
+</select>
+<select id="result-language" class="bg-white/90 border-none rounded-[1rem] px-6 py-4 md:w-64 font-semibold text-primary focus:ring-2 focus:ring-secondary cursor-pointer">
+<option value="en-US">English (result)</option>
+<option value="hi-IN">Hindi (result)</option>
+<option value="bn-IN">Bengali (result)</option>
+<option value="ta-IN">Tamil (result)</option>
+<option value="mr-IN">Marathi (result)</option>
+<option value="es-ES">Spanish (result)</option>
+<option value="fr-FR">French (result)</option>
+</select>
+<select class="bg-white/90 border-none rounded-[1rem] px-6 py-4 md:w-64 font-semibold text-primary focus:ring-2 focus:ring-secondary cursor-pointer">
+<option>Select Legal Category</option>
+<option>Fundamental Rights</option>
+<option>Civil Law</option>
+<option>Criminal Justice</option>
+<option>Consumer Rights</option>
+<option>Labor &amp; Employment</option>
+</select>
+<button id="submit-button" class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-[1rem] font-bold text-lg hover:shadow-[0_0_25px_rgba(254,152,50,0.5)] transition-all active:scale-95" type="submit">
+                        Analyze Problem
+                    </button>
+</form>
+<section id="result" class="result hidden text-left mt-8" aria-live="polite"></section>
+</div>
+<!-- Trending Tags -->
+<div class="flex flex-wrap items-center justify-center gap-3 mt-6 pb-2">
+<span class="text-white/60 text-sm font-bold uppercase tracking-widest mr-2">Trending:</span>
+<button class="px-4 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition-all border border-white/10">Police Complaint</button>
+<button class="px-4 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition-all border border-white/10">Salary Not Paid</button>
+<button class="px-4 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition-all border border-white/10">RTI Application</button>
+<button class="px-4 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition-all border border-white/10">Consumer Complaint</button>
+<button class="px-4 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition-all border border-white/10">College Admission Issue</button>
+</div>
+</div>
+</div>
+<!-- Ambient Light Accents -->
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-tertiary-container/30 rounded-full blur-[100px] pointer-events-none"></div>
+</section>
+<!-- Legal Search Section -->
+<section class="py-20 bg-surface px-6">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">Legal Search Engine</h2>
+<p class="text-xl text-on-surface-variant max-w-2xl mx-auto">
+Search for legal procedures, government forms, and official guidance from reliable sources
+</p>
+</div>
 
-        <form id="problem-form">
-          <label for="problem">Your legal or government-related problem</label>
-          <textarea
-            id="problem"
-            name="problem"
-            rows="5"
-            placeholder="e.g., Company didn't pay my salary on time"
-            required
-          ></textarea>
-          <button type="submit" id="submit-button">Request Guidance</button>
-        </form>
+<!-- Search Interface -->
+<div class="max-w-4xl mx-auto">
+<div class="bg-surface-container-lowest rounded-2xl shadow-lg p-8">
+<form id="search-form" class="flex flex-col md:flex-row gap-4">
+<div class="flex-grow flex items-center bg-white rounded-xl px-6 py-4 shadow-sm border border-outline-variant">
+<span class="material-symbols-outlined text-slate-400 mr-4" data-icon="search">search</span>
+<input 
+id="search-query" 
+class="w-full border-none focus:ring-0 text-primary bg-transparent placeholder:text-slate-400 font-medium text-lg" 
+placeholder="Search legal procedures, government forms, rights..." 
+type="text" 
+required
+/>
+</div>
+<button 
+id="search-button" 
+class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_25px_rgba(12,45,87,0.3)] transition-all active:scale-95 whitespace-nowrap" 
+type="submit"
+>
+Search Legal Info
+</button>
+</form>
 
-        <section id="result" class="result hidden" aria-live="polite"></section>
-      </main>
-    </div>
-    <script type="module" src="main.js"></script>
-  </body>
-</html>
+<!-- Loading Indicator -->
+<div id="search-loading" class="hidden mt-6 text-center">
+<div class="inline-flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined animate-spin" data-icon="refresh">refresh</span>
+<span class="font-medium">Searching legal databases...</span>
+</div>
+</div>
+
+<!-- Search Results -->
+<div id="search-results" class="mt-8 space-y-4"></div>
+
+<!-- Error Message -->
+<div id="search-error" class="hidden mt-6 bg-error-container text-on-error p-4 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="error">error</span>
+<span id="error-message"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Section: The Sovereign Grid -->
+<section class="py-32 bg-surface-container-low px-6">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<span class="text-secondary font-black tracking-widest uppercase text-sm mb-4 block">Institutional Framework</span>
+<h2 class="text-4xl md:text-5xl font-black text-primary leading-tight">Navigating the Pillars of Sovereign Protection.</h2>
+</div>
+<p class="text-on-surface-variant font-medium text-lg md:w-1/3">
+                    Leveraging advanced neural networks to interpret constitutional mandates, making justice accessible for every citizen.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Know Your Rights -->
+<div class="group bg-surface-container-lowest p-10 rounded-[2rem] transition-all duration-500 hover:-translate-y-2 shadow-[0px_20px_40px_rgba(0,27,61,0.06)] flex flex-col h-full">
+<div class="w-16 h-16 rounded-2xl bg-primary-fixed flex items-center justify-center mb-8 group-hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="menu_book">menu_book</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Know Your Rights</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 flex-grow">
+                        A comprehensive repository of constitutional protections, fundamental duties, and statutory rights explained in simplified vernacular.
+                    </p>
+<a class="inline-flex items-center font-bold text-secondary gap-2 group-hover:gap-4 transition-all" href="#">
+                        Explore Rights <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2: AI Legal Assistant -->
+<div class="group bg-primary-container p-10 rounded-[2rem] transition-all duration-500 hover:-translate-y-2 shadow-xl flex flex-col h-full relative overflow-hidden">
+<div class="relative z-10">
+<div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">AI Legal Assistant</h3>
+<p class="text-on-primary-container leading-relaxed mb-8 flex-grow">
+                            Our sovereign intelligence engine parses complex legal problems to provide instant insights and potential pathways for resolution.
+                        </p>
+<a class="inline-flex items-center font-bold text-secondary-fixed-dim gap-2 group-hover:gap-4 transition-all" href="legal-scan.html">
+                            Start Consultation <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Decorative AI Pattern -->
+<div class="absolute -right-10 -bottom-10 opacity-10">
+<span class="material-symbols-outlined text-[12rem]" data-icon="shield">shield</span>
+</div>
+</div>
+<!-- Card 3: Legal Procedures -->
+<div class="group bg-surface-container-lowest p-10 rounded-[2rem] transition-all duration-500 hover:-translate-y-2 shadow-[0px_20px_40px_rgba(0,27,61,0.06)] flex flex-col h-full">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-fixed flex items-center justify-center mb-8 group-hover:bg-tertiary-container transition-colors">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-3xl" data-icon="account_balance">account_balance</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Legal Procedures</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 flex-grow">
+                        Navigational blueprints for filing RTIs, consumer grievances, and official complaints within the framework of Indian government machinery.
+                    </p>
+<a class="inline-flex items-center font-bold text-secondary gap-2 group-hover:gap-4 transition-all" href="voice-assistant.html">
+                        Voice Assistant <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Section: Sovereign Intelligence Dashboard -->
+<section class="py-24 bg-surface">
+<div class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7">
+<div class="relative rounded-[3rem] overflow-hidden shadow-2xl bg-white p-2">
+<img alt="Legal Technology Interface" class="w-full h-auto rounded-[2.5rem]" data-alt="Professional workspace featuring a modern laptop showing a clean legal analytics dashboard with graphs and constitutional text snippets, ambient office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUaNgS6KrywuyNXcXZkKIGZ5BPpuUzb8Cy61vZystyGzo9tjDYbPOga_OL5TWduUsuj8_hSyHcJsR1t8MUY57QSLcvKHd4i7q1eHrpRf5LmCwC3GsKBOy9IgwjXAm2usxRrxoZV5ArYXiNOunOVt9w13IOzAyCZ3Mg9Z8SsuU9lXIIWLgHkPsJ8OIWg_SSI75P9ftnRvst5XPxmxh5iXzEpjzDz6onm-drvHRRiyA7rHIz7_VuyipyuVUsf7t-0yuTQ5oSBq3DHM0"/>
+<!-- Floating Stat Chip -->
+<div class="absolute bottom-8 left-8 bg-tertiary-container p-6 rounded-3xl shadow-lg border-l-4 border-on-tertiary-container">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<p class="text-on-tertiary-container text-sm font-black uppercase tracking-wider">Engine Status</p>
+<p class="text-white font-bold text-xl">100% Constitutionally Valid</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-secondary/10 w-fit px-4 py-1.5 rounded-full">
+<span class="text-secondary font-bold text-xs uppercase tracking-tighter">AI Analysis Layer</span>
+</div>
+<h2 class="text-4xl font-black text-primary leading-tight">Unleash the Power of Digital Legal Advocacy.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                    Our platform doesn't just provide links; it provides **contextual intelligence**. By analyzing the specifics of your situation, the engine identifies relevant clauses from the Constitution of India and pertinent IPC/BNS sections.
+                </p>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span>
+</div>
+<div>
+<h4 class="font-bold text-primary">Precedential Mapping</h4>
+<p class="text-slate-500 text-sm">Matches your case against historical judgements from High Courts and the Supreme Court.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span>
+</div>
+<div>
+<h4 class="font-bold text-primary">Automated Document Drafting</h4>
+<p class="text-slate-500 text-sm">Generate preliminary drafts for legal notices and administrative complaints in seconds.</p>
+</div>
+</li>
+</ul>
+<button class="mt-8 bg-primary-container text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-primary transition-all group">
+                    Explore Advanced Analytics
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Shell -->
+<footer class="bg-slate-950 text-white py-20">
+<div class="max-w-[1440px] mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-20">
+<div class="col-span-1 md:col-span-1">
+<h3 class="text-xl font-black tracking-tighter mb-6 uppercase">Citizen Guardian</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    A dedicated initiative under the Digital Sovereignty framework to ensure legal literacy for all.
+                </p>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="contact_support">contact_support</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-white mb-6 uppercase text-xs tracking-[0.2em]">Sovereign Links</h4>
+<ul class="space-y-4 text-sm text-slate-400 font-medium">
+<li><a class="hover:text-secondary-container transition-colors" href="#">Supreme Court Portal</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">National Portal of India</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Law Commission Reports</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Digital India Initiative</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-white mb-6 uppercase text-xs tracking-[0.2em]">Constitutional Rights</h4>
+<ul class="space-y-4 text-sm text-slate-400 font-medium">
+<li><a class="hover:text-secondary-container transition-colors" href="#">Right to Equality</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Right to Freedom</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Cultural &amp; Educational Rights</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Constitutional Remedies</a></li>
+</ul>
+</div>
+<div class="bg-white/5 p-8 rounded-[2rem] border border-white/10">
+<h4 class="font-bold text-white mb-4">Emergency Assistance</h4>
+<p class="text-slate-400 text-xs mb-6">Connect directly with digital legal aid volunteers for urgent human rights violations.</p>
+<button class="w-full py-4 bg-error text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-error/80 transition-all">
+                    Initiate SOS
+                </button>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-500 text-xs font-medium">© 2024 Citizen Digital Rights Guardian. Ministry of Electronics and Information Technology.</p>
+<div class="flex gap-8 text-xs font-bold text-slate-500 uppercase tracking-widest">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Use</a>
+<a class="hover:text-white" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-xl shadow-[0_-10px_30px_rgba(0,0,0,0.05)] border-t-0">
+<div class="flex justify-around items-center h-20 px-4">
+<div class="flex flex-col items-center gap-1 text-blue-900 font-semibold">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] uppercase tracking-tighter">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 font-medium">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="text-[10px] uppercase tracking-tighter">Rights</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 font-medium">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-[10px] uppercase tracking-tighter">Legal</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 font-medium">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="text-[10px] uppercase tracking-tighter">Gov</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 font-medium">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="text-[10px] uppercase tracking-tighter">About</span>
+</div>
+</div>
+</div>
+<script type="module" src="./main.js"></script>
+</body></html>
