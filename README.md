@@ -154,4 +154,4 @@ Legal knowledge base compiled from public sources
 Inspired by the need for accessible legal guidance for all citizens
 Made with ❤️ for digital rights and civic empowerment
 
-Grok Code Fast 1 • 1x
+
